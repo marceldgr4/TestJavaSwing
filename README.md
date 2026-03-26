@@ -17,7 +17,7 @@ Aplicación de escritorio desarrollada en **Java Swing** para gestionar una list
 
 ```bash
 # 1. Clonar o descomprimir el proyecto
-git clone <url-del-repositorio>
+git clone <https://github.com/marceldgr4/TestJavaSwing.git>
 cd testJavaSwing
 
 # 2. Compilar el proyecto
