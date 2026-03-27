@@ -14,7 +14,7 @@ Aplicación de escritorio desarrollada en **Java Swing** para gestionar una list
 | Maven       | 3.6+          |
 
 ### Pasos
-
+Opción 1 — Maven (recomendado)
 ```bash
 # 1. Clonar o descomprimir el proyecto
 git clone <https://github.com/marceldgr4/TestJavaSwing.git>
@@ -30,22 +30,45 @@ mvn exec:java -Dexec.mainClass="com.app.App"
 > **Alternativa con IDE:** Importar como proyecto Maven en IntelliJ IDEA, Eclipse o NetBeans y ejecutar la clase `com.app.App`.
 
 ---
-
+## Opción 2 —  Ejecutable .jar y correrlo
+```
+Buscar selecionar el archivo testJavaSwing.jar.
+se encutra en la raiz de proyecto
+testJavaSwing/
+├── testJavaSwing.jar 
+```
+---
 ##  Estructura del proyecto
 
 ```
-src/
-└── main/java/com/app/
-    ├── App.java               # Punto de entrada principal
-    ├── Model/
-    │   ├── Task.java          # Entidad de tarea
-    │   └── TaskStatus.java    # Enum de estados
-    ├── Service/
-    │   └── TaskService.java   # Lógica de negocio
-    └── UI/
-        ├── MainFrame.java     # Ventana principal
-        ├── TaskFormPanel.java # Formulario de nueva tarea
-        └── TaskTablePanel.java# Tabla + filtro + acciones
+testJavaSwing/
+├── testJavaSwing.jar                    #ejecutable java.
+├── pom.xml                              # Configuración Maven + plugins
+├── README.md
+├── src/
+│   ├── main/
+│   │   ├── java/com/app/
+│   │   │   ├── App.java                 # Punto de entrada (main)
+│   │   │   ├── Model/
+│   │   │   │   ├── Task.java            # Entidad de tarea
+│   │   │   │   └── TaskStatus.java      # Enum de estados
+│   │   │   ├── Service/
+│   │   │   │   └── TaskService.java     # Lógica de negocio
+│   │   │   └── UI/
+│   │   │       ├── MainFrame.java       # Ventana principal
+│   │   │       ├── TaskFormPanel.java   # Formulario de nueva tarea
+│   │   │       └── TaskTablePanel.java  # Tabla + filtro + acciones
+│   │   └── resources/
+│   │       └── META-INF/
+│   │           └── MANIFEST.MF          # Define la clase principal del JAR
+│   └── test/
+│       └── java/com/app/
+│           └── AppTest.java
+├── .idea/
+│   └── artifacts/
+│       └── testJavaSwing_jar.xml        # Config. artifact IntelliJ
+└── target/                              # Generado por Maven (no editar)
+    └── testJavaSwing-1.0-SNAPSHOT.jar   # JAR ejecutable
 ```
 
 ---
